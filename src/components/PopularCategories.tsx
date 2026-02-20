@@ -1,16 +1,5 @@
 import { motion, Variants, Transition } from "framer-motion";
-import iconCoding from "@/assets/icon-coding.png";
-import iconSpeaking from "@/assets/icon-speaking.png";
-import iconChess from "@/assets/icon-chess.png";
-import iconHomework from "@/assets/icon-homework.png";
-
-const CATEGORIES = [
-  { name: "Coding", icon: iconCoding, color: "border-primary bg-primary/10", accent: "bg-primary", label: "Coding" },
-  { name: "Public Speaking", icon: iconSpeaking, color: "border-orange bg-orange/10", accent: "bg-orange", label: "Public speaking" },
-  { name: "Chess", icon: iconChess, color: "border-muted-foreground bg-muted", accent: "bg-muted-foreground", label: "Chess" },
-  { name: "Home Work Help", icon: iconHomework, color: "border-pink bg-pink/10", accent: "bg-pink", label: "Home work help" },
-  { name: "App Building", icon: iconCoding, color: "border-accent bg-accent/10", accent: "bg-accent", label: "App building" },
-];
+import { CATEGORIES } from "@/constants";
 
 const containerVariants: Variants = {
   hidden: {},
@@ -50,7 +39,6 @@ const PopularCategories = () => {
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          {/* Dashed connector line */}
           <motion.div
             className="absolute top-10 left-[10%] right-[10%] z-0 hidden md:block"
             style={{ borderTop: "2px dashed hsl(var(--primary) / 0.35)" }}
@@ -79,7 +67,6 @@ const PopularCategories = () => {
                 whileTap={{ scale: 0.96 }}
                 className="flex flex-col items-center gap-3 cursor-pointer group"
               >
-                {/* Icon box */}
                 <motion.div
                   className={`relative w-20 h-20 rounded-2xl border-2 ${cat.color} flex items-center justify-center shadow-sm group-hover:shadow-lg transition-shadow`}
                   whileHover={{ rotate: [0, -5, 5, -3, 0] as unknown as number }}
@@ -90,7 +77,6 @@ const PopularCategories = () => {
                     alt={cat.name}
                     className="w-12 h-12 object-contain drop-shadow-md"
                   />
-                  {/* Connector dot */}
                   <motion.div
                     className={`absolute -bottom-5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full ${cat.accent} ring-2 ring-background hidden md:block`}
                     initial={{ scale: 0 }}
@@ -100,7 +86,6 @@ const PopularCategories = () => {
                   />
                 </motion.div>
 
-                {/* Label */}
                 <motion.span
                   className="text-sm font-semibold text-foreground mt-3 text-center leading-tight"
                   initial={{ opacity: 0 }}
@@ -111,7 +96,6 @@ const PopularCategories = () => {
                   {cat.label}
                 </motion.span>
 
-                {/* Animated underline on hover */}
                 <motion.div
                   className={`h-0.5 w-0 rounded-full ${cat.accent}`}
                   whileHover={{ width: "60%" }}
