@@ -28,7 +28,6 @@ const CourseCard = ({
   level,
   classes,
   ageRange,
-  originalPrice,
   salePrice,
   badge,
 }: CourseCardProps) => {
@@ -37,76 +36,67 @@ const CourseCard = ({
   return (
     <div
       onClick={() => navigate(`/course/${id}`)}
-      className="bg-card rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 group min-w-[260px] max-w-[300px] flex-shrink-0 cursor-pointer flex flex-col overflow-hidden"
+      className="group flex min-w-[280px] max-w-[300px] flex-shrink-0 cursor-pointer flex-col overflow-hidden rounded-3xl border border-border bg-card p-3 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
     >
-      {/* Rating row — above image */}
-      <div className="flex items-center gap-1 px-3 pt-3 pb-1">
-        <Star className="w-3.5 h-3.5 fill-accent text-accent" />
-        <span className="text-xs font-semibold text-foreground">{rating}</span>
-        <span className="text-xs text-muted-foreground">| {learners} learners</span>
-      </div>
-
-      {/* Image */}
-      <div className="relative mx-3 rounded-xl overflow-hidden h-40">
+      <div className="relative mb-3 h-44 overflow-hidden rounded-2xl">
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
+
         {badge && (
-          <span className="absolute top-2.5 left-2.5 bg-orange text-primary-foreground text-[11px] font-bold px-3 py-1 rounded-full shadow">
+          <span className="absolute left-2 top-2 rounded-r-xl rounded-bl-xl bg-orange px-3 py-1 text-sm font-bold text-primary-foreground shadow">
             {badge}
           </span>
         )}
+
+        <div className="absolute right-2 top-2 flex items-center gap-1 rounded-full bg-background/90 px-2 py-1 text-xs font-medium text-foreground backdrop-blur-sm">
+          <Star className="h-3.5 w-3.5 fill-accent text-accent" />
+          <span>{rating}</span>
+          <span className="text-muted-foreground">| {learners} learners</span>
+        </div>
       </div>
 
-      {/* Content */}
-      <div className="p-3 flex flex-col flex-1">
-        {/* Pill tags */}
-        <div className="flex flex-wrap gap-1.5 mb-2.5">
-          <span className="text-[11px] border border-primary/30 text-primary px-2.5 py-0.5 rounded-full bg-primary/5">
-            {language}
-          </span>
-          <span className="text-[11px] border border-pink/40 text-pink px-2.5 py-0.5 rounded-full bg-pink/5">
-            {level}
-          </span>
-          <span className="text-[11px] border border-accent/50 text-accent-foreground px-2.5 py-0.5 rounded-full bg-accent/10">
-            {classes} classes
-          </span>
-        </div>
+      <div className="mb-2 flex flex-wrap gap-1.5">
+        <span className="rounded-full border border-primary/30 bg-primary/5 px-2.5 py-0.5 text-[11px] text-primary">
+          {language}
+        </span>
+        <span className="rounded-full border border-pink/40 bg-pink/5 px-2.5 py-0.5 text-[11px] text-pink">
+          {level}
+        </span>
+        <span className="rounded-full border border-accent/50 bg-accent/10 px-2.5 py-0.5 text-[11px] text-accent-foreground">
+          {classes} classes
+        </span>
+      </div>
 
-        {/* Title */}
-        <h3 className="text-sm font-bold text-foreground leading-snug mb-1 line-clamp-2">
-          {title}
-        </h3>
+      <h3 className="mb-1 line-clamp-2 text-lg font-bold leading-snug text-foreground">
+        {title}
+      </h3>
+      <p className="mb-3 line-clamp-2 flex-1 text-xs text-muted-foreground">{description}</p>
 
-        {/* Description */}
-        <p className="text-xs text-muted-foreground mb-3 line-clamp-2 flex-1">
-          {description}
-        </p>
-
-        {/* Bottom row */}
-        <div className="flex items-center justify-between pt-2 border-t border-border">
-          <div className="flex items-center gap-3 text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <Users className="w-3.5 h-3.5" />
-              <span className="text-[11px]">{ageRange}</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5" />
-              <span className="text-[11px]">{classes * 45} min</span>
-            </div>
-            <div className="flex items-center gap-0.5">
-              <span className="text-[11px] font-semibold text-foreground">₹{salePrice}</span>
-            </div>
+      <div className="flex items-center justify-between border-t border-border pt-2">
+        <div className="flex items-center gap-3 text-muted-foreground">
+          <div className="flex items-center gap-1">
+            <Users className="h-3.5 w-3.5" />
+            <span className="text-sm">{ageRange}</span>
           </div>
-          <button
-            onClick={(e) => { e.stopPropagation(); navigate(`/course/${id}`); }}
-            className="w-7 h-7 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary hover:text-primary-foreground text-primary transition-colors"
-          >
-            <ShoppingCart className="w-3.5 h-3.5" />
-          </button>
+          <div className="flex items-center gap-1">
+            <Clock className="h-3.5 w-3.5" />
+            <span className="text-sm">45</span>
+          </div>
+          <div className="text-sm font-semibold text-foreground">₹ {salePrice}</div>
         </div>
+
+        <button
+          onClick={(event) => {
+            event.stopPropagation();
+            navigate(`/course/${id}`);
+          }}
+          className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+        >
+          <ShoppingCart className="h-4 w-4" />
+        </button>
       </div>
     </div>
   );
