@@ -21,7 +21,7 @@ const HeroSection = ({ searchTerm, onSearch }: HeroSectionProps) => {
   };
 
   return (
-    <section className="relative pt-16 overflow-hidden">
+    <section className="relative overflow-hidden">
       <div
         className="relative h-[220px] md:h-[260px] flex items-center overflow-hidden"
         style={{ background: "linear-gradient(120deg, hsl(268,55%,32%) 0%, hsl(258,52%,40%) 100%)" }}
