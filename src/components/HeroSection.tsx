@@ -61,9 +61,9 @@ const HeroSection = () => {
         </div>
 
         {/* Right student + badge */}
-        <div className="hidden md:block absolute right-0 bottom-0 h-full w-44 lg:w-52 z-10">
+        <div className="hidden md:block absolute right-0 bottom-0 h-full w-52 lg:w-64 z-10">
           {/* 10k+ Happy Kids badge */}
-          <div className="absolute top-6 right-4 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl px-3 py-1.5 z-20 shadow-lg flex items-center gap-1.5">
+          <div className="absolute top-6 right-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl px-3 py-1.5 z-20 shadow-lg flex items-center gap-1.5">
             <BookOpen className="w-3 h-3 text-accent shrink-0" />
             <div>
               <span className="text-primary-foreground text-xs font-bold block leading-none">10k+</span>
@@ -73,7 +73,7 @@ const HeroSection = () => {
           <img
             src={studentGirl}
             alt="Student girl reading a book"
-            className="absolute bottom-0 right-4 h-[85%] w-auto object-contain object-bottom drop-shadow-2xl"
+            className="absolute bottom-0 right-0 h-[105%] w-auto object-contain object-bottom drop-shadow-2xl"
           />
         </div>
       </div>
