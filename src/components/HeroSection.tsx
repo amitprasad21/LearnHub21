@@ -24,7 +24,7 @@ const HeroSection = () => {
             <img
               src={studentBoy}
               alt="Student boy with magnifying glass"
-              className="w-48 lg:w-56 h-auto object-contain drop-shadow-2xl"
+              className="w-48 lg:w-60 h-auto object-contain drop-shadow-2xl"
             />
           </div>
 
