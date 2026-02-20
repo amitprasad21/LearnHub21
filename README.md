@@ -8,7 +8,7 @@ It helps parents and students explore age-appropriate classes, instructors, and 
 
 ## 🚀 Live Project
 
-👉 **Lovable Project**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+👉 **Project**: https://learn-hub21.vercel.app/
 
 > Changes made via Lovable are automatically committed to this repository.
 > 
