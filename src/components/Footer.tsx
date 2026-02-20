@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
-    <footer className="bg-foreground py-12 text-primary-foreground md:py-16">
+    <footer className="bg-surface-bg text-foreground py-12">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mb-10 grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <h3 className="mb-4 text-2xl font-bold">
-              Learn<span className="text-accent">Hub</span>
+            <h3 className="text-lg font-bold mb-4">
+              Learn<span className="text-primary">Hub</span>
             </h3>
-            <p className="max-w-sm text-sm leading-relaxed text-primary-foreground/75">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Empowering young minds with skills for the future. Learn anytime, anywhere.
             </p>
             <div className="mt-5 flex w-full max-w-sm items-center overflow-hidden rounded-full border border-primary-foreground/25 bg-primary-foreground/10">
@@ -23,37 +23,35 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="mb-3 text-sm font-semibold">Explore</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><a href="#" className="transition-opacity hover:opacity-100">All Courses</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">Teachers</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">Categories</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">Webinars</a></li>
+            <h4 className="text-sm font-semibold mb-3">Explore</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" className="hover:opacity-100 transition-opacity">All Courses</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Teachers</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Categories</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Webinars</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-3 text-sm font-semibold">Support</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><a href="#" className="transition-opacity hover:opacity-100">Help Center</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">Contact Us</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">FAQs</a></li>
+            <h4 className="text-sm font-semibold mb-3">Support</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Help Center</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Contact Us</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">FAQs</a></li>
             </ul>
           </div>
 
           <div>
-            <h4 className="mb-3 text-sm font-semibold">Legal</h4>
-            <ul className="space-y-2 text-sm text-primary-foreground/70">
-              <li><a href="#" className="transition-opacity hover:opacity-100">Privacy Policy</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">Terms of Service</a></li>
-              <li><a href="#" className="transition-opacity hover:opacity-100">Refund Policy</a></li>
+            <h4 className="text-sm font-semibold mb-3">Legal</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Privacy Policy</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Terms of Service</a></li>
+              <li><a href="#" className="hover:opacity-100 transition-opacity">Refund Policy</a></li>
             </ul>
           </div>
         </div>
-
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-primary-foreground/20 pt-6 text-center md:flex-row">
-          <p className="text-xs text-primary-foreground/60">© 2026 LearnHub. All rights reserved.</p>
-          <p className="text-xs text-primary-foreground/50">Made for curious young learners ✨</p>
+        <div className="border-t border-border pt-6 text-center">
+          <p className="text-xs text-muted-foreground">© 2026 LearnHub. All rights reserved.</p>
         </div>
       </div>
     </footer>
