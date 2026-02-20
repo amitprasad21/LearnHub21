@@ -1,43 +1,125 @@
-import courseCoding from "@/assets/course-coding.jpg";
-import courseSpeaking from "@/assets/course-speaking.jpg";
-import courseChess from "@/assets/course-chess.jpg";
-import courseRobotics from "@/assets/course-robotics.jpg";
+import { motion, Variants, Transition } from "framer-motion";
+import iconCoding from "@/assets/icon-coding.png";
+import iconSpeaking from "@/assets/icon-speaking.png";
+import iconChess from "@/assets/icon-chess.png";
+import iconHomework from "@/assets/icon-homework.png";
 
 const CATEGORIES = [
-  { name: "Coding", image: courseCoding, color: "border-primary bg-primary/5" },
-  { name: "Public Speaking", image: courseSpeaking, color: "border-orange bg-orange/5" },
-  { name: "Chess", image: courseChess, color: "border-green bg-green/5" },
-  { name: "Homework Help", image: courseRobotics, color: "border-pink bg-pink/5" },
-  { name: "App Building", image: courseCoding, color: "border-accent bg-accent/10" },
+  { name: "Coding", icon: iconCoding, color: "border-primary bg-primary/10", accent: "bg-primary", label: "Coding" },
+  { name: "Public Speaking", icon: iconSpeaking, color: "border-orange bg-orange/10", accent: "bg-orange", label: "Public speaking" },
+  { name: "Chess", icon: iconChess, color: "border-muted-foreground bg-muted", accent: "bg-muted-foreground", label: "Chess" },
+  { name: "Home Work Help", icon: iconHomework, color: "border-pink bg-pink/10", accent: "bg-pink", label: "Home work help" },
+  { name: "App Building", icon: iconCoding, color: "border-accent bg-accent/10", accent: "bg-accent", label: "App building" },
 ];
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+    } as Transition,
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 50, scale: 0.85 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { type: "spring" as const, stiffness: 200, damping: 18 },
+  },
+};
 
 const PopularCategories = () => {
   return (
-    <section className="py-12 md:py-16">
+    <section className="py-12 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Popular Categories 🎨
-        </h2>
-        <p className="text-muted-foreground text-sm md:text-base mb-10">
-          Pick what you love most! These categories have everything you need to learn something awesome
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
+            Popular Categories 🎨
+          </h2>
+          <p className="text-muted-foreground text-sm md:text-base mb-14">
+            Pick what you love most! These categories have everything you need to learn something awesome
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
-          {CATEGORIES.map((cat) => (
-            <div
-              key={cat.name}
-              className={`flex flex-col items-center gap-3 p-4 rounded-2xl border-2 ${cat.color} hover:shadow-md transition-all cursor-pointer group`}
-            >
-              <div className="w-16 h-16 rounded-xl overflow-hidden">
-                <img
-                  src={cat.image}
-                  alt={cat.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform"
+        <div className="relative max-w-4xl mx-auto">
+          {/* Dashed connector line */}
+          <motion.div
+            className="absolute top-10 left-[10%] right-[10%] z-0 hidden md:block"
+            style={{ borderTop: "2px dashed hsl(var(--primary) / 0.35)" }}
+            initial={{ scaleX: 0, originX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+          />
+
+          <motion.div
+            className="relative z-10 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-60px" }}
+          >
+            {CATEGORIES.map((cat, i) => (
+              <motion.div
+                key={cat.name}
+                variants={itemVariants}
+                whileHover={{
+                  y: -10,
+                  scale: 1.07,
+                  transition: { type: "spring" as const, stiffness: 300, damping: 15 },
+                }}
+                whileTap={{ scale: 0.96 }}
+                className="flex flex-col items-center gap-3 cursor-pointer group"
+              >
+                {/* Icon box */}
+                <motion.div
+                  className={`relative w-20 h-20 rounded-2xl border-2 ${cat.color} flex items-center justify-center shadow-sm group-hover:shadow-lg transition-shadow`}
+                  whileHover={{ rotate: [0, -5, 5, -3, 0] as unknown as number }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <img
+                    src={cat.icon}
+                    alt={cat.name}
+                    className="w-12 h-12 object-contain drop-shadow-md"
+                  />
+                  {/* Connector dot */}
+                  <motion.div
+                    className={`absolute -bottom-5 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full ${cat.accent} ring-2 ring-background hidden md:block`}
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.1, type: "spring" as const }}
+                  />
+                </motion.div>
+
+                {/* Label */}
+                <motion.span
+                  className="text-sm font-semibold text-foreground mt-3 text-center leading-tight"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 + i * 0.1 }}
+                >
+                  {cat.label}
+                </motion.span>
+
+                {/* Animated underline on hover */}
+                <motion.div
+                  className={`h-0.5 w-0 rounded-full ${cat.accent}`}
+                  whileHover={{ width: "60%" }}
+                  transition={{ duration: 0.25 }}
                 />
-              </div>
-              <span className="text-sm font-semibold text-foreground">{cat.name}</span>
-            </div>
-          ))}
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
