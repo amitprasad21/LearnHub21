@@ -66,3 +66,21 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 }
+
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-14px); }
+}
+
+.float-soft {
+  animation: float-soft 3.8s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: float-slow 5.2s ease-in-out infinite;
+}

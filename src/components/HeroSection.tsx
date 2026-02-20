@@ -23,73 +23,71 @@ const HeroSection = ({ searchTerm, onSearch }: HeroSectionProps) => {
   return (
     <section className="relative overflow-hidden">
       <div
-        className="relative h-[220px] md:h-[260px] flex items-center overflow-hidden"
+        className="relative flex h-[260px] items-center overflow-hidden md:h-[330px]"
         style={{ background: "linear-gradient(120deg, hsl(268,55%,32%) 0%, hsl(258,52%,40%) 100%)" }}
       >
-        <div className="absolute top-0 left-1/3 w-72 h-72 bg-light-purple/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="float-soft absolute left-[28%] top-4 hidden h-24 w-24 rounded-full bg-light-purple/15 blur-2xl md:block" />
+        <div className="float-slow absolute right-[30%] top-10 hidden h-12 w-12 rounded-xl border border-primary-foreground/30 bg-primary-foreground/10 backdrop-blur-sm md:block" />
+        <div className="float-soft absolute left-[46%] bottom-8 hidden h-10 w-10 rounded-full bg-accent/30 md:block" />
 
-        <div className="hidden md:block absolute left-0 bottom-0 h-full w-52 lg:w-64 z-10">
-          <div className="absolute top-6 left-4 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl px-3 py-1.5 z-20 shadow-lg flex items-center gap-1.5">
+        <div className="absolute bottom-0 left-0 z-10 hidden h-full w-56 md:block lg:w-72">
+          <div className="float-soft absolute left-4 top-7 z-20 flex items-center gap-1.5 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 shadow-lg backdrop-blur-sm">
             <div>
-              <span className="text-primary-foreground text-xs font-bold block leading-none">500+</span>
-              <span className="text-primary-foreground/70 text-[9px]">Courses</span>
+              <span className="block text-xs font-bold leading-none text-primary-foreground">500+</span>
+              <span className="text-[9px] text-primary-foreground/70">Courses</span>
             </div>
           </div>
-          <div className="absolute bottom-6 left-4 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl px-3 py-1.5 z-20 shadow-lg flex items-center gap-1.5">
-            <Star className="w-3 h-3 fill-accent text-accent shrink-0" />
+          <div className="float-slow absolute bottom-8 left-3 z-20 flex items-center gap-1.5 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 shadow-lg backdrop-blur-sm">
+            <Star className="h-3 w-3 shrink-0 fill-accent text-accent" />
             <div>
-              <span className="text-primary-foreground text-xs font-bold block leading-none">4.9</span>
-              <span className="text-primary-foreground/70 text-[9px]">Rating</span>
+              <span className="block text-xs font-bold leading-none text-primary-foreground">4.9</span>
+              <span className="text-[9px] text-primary-foreground/70">Rating</span>
             </div>
           </div>
           <img
             src={studentBoy}
             alt="Student boy with magnifying glass"
-            className="absolute bottom-0 left-6 h-[90%] w-auto object-contain object-bottom drop-shadow-2xl"
+            className="absolute bottom-0 left-4 h-[95%] w-auto object-contain object-bottom drop-shadow-2xl"
           />
         </div>
 
-        <div className="w-full text-primary-foreground text-center px-4 md:px-0 md:mx-auto z-10 relative">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-1">
-            Learn a New Skill
-          </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl font-bold text-accent mb-5">
-            Everyday, Anytime, and Anywhere.
-          </p>
+        <div className="relative z-10 w-full px-4 text-center text-primary-foreground md:mx-auto md:px-0">
+          <h1 className="mb-1 text-2xl font-bold leading-tight md:text-4xl">Learn a New Skill</h1>
+          <p className="mb-5 text-xl font-bold text-accent md:text-4xl">Everyday, Anytime, and Anywhere.</p>
 
           <form
             onSubmit={handleSubmit}
-            className="flex items-center bg-background rounded-full p-1 pl-4 max-w-sm md:max-w-md mx-auto shadow-xl"
+            className="mx-auto flex max-w-sm items-center rounded-full bg-background p-1 pl-4 shadow-xl md:max-w-xl"
           >
-            <Search className="w-4 h-4 text-muted-foreground mr-2 shrink-0" />
+            <Search className="mr-2 h-4 w-4 shrink-0 text-muted-foreground" />
             <input
               type="text"
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}
               placeholder="What do you want to learn today?"
-              className="flex-1 text-xs md:text-sm text-foreground bg-transparent outline-none placeholder:text-muted-foreground min-w-0"
+              className="min-w-0 flex-1 bg-transparent text-xs text-foreground outline-none placeholder:text-muted-foreground md:text-sm"
             />
             <button
               type="submit"
-              className="bg-primary text-primary-foreground text-xs md:text-sm font-semibold px-5 py-2 rounded-full hover:brightness-110 transition-all shrink-0"
+              className="shrink-0 rounded-full bg-primary px-6 py-2 text-xs font-semibold text-primary-foreground transition-all hover:brightness-110 md:text-sm"
             >
               Search
             </button>
           </form>
         </div>
 
-        <div className="hidden md:block absolute right-0 bottom-0 h-full w-52 lg:w-64 z-10">
-          <div className="absolute top-6 right-2 bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/20 rounded-xl px-3 py-1.5 z-20 shadow-lg flex items-center gap-1.5">
-            <BookOpen className="w-3 h-3 text-accent shrink-0" />
+        <div className="absolute bottom-0 right-0 z-10 hidden h-full w-56 md:block lg:w-72">
+          <div className="float-soft absolute right-4 top-7 z-20 flex items-center gap-1.5 rounded-xl border border-primary-foreground/20 bg-primary-foreground/10 px-3 py-1.5 shadow-lg backdrop-blur-sm">
+            <BookOpen className="h-3 w-3 shrink-0 text-accent" />
             <div>
-              <span className="text-primary-foreground text-xs font-bold block leading-none">10k+</span>
-              <span className="text-primary-foreground/70 text-[9px]">Happy Kids</span>
+              <span className="block text-xs font-bold leading-none text-primary-foreground">10k+</span>
+              <span className="text-[9px] text-primary-foreground/70">Happy Kids</span>
             </div>
           </div>
           <img
             src={studentGirl}
             alt="Student girl reading a book"
-            className="absolute bottom-0 right-0 h-[105%] w-auto object-contain object-bottom drop-shadow-2xl"
+            className="absolute bottom-0 right-0 h-[112%] w-auto object-contain object-bottom drop-shadow-2xl"
           />
         </div>
       </div>

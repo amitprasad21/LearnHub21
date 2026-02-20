@@ -2,7 +2,7 @@ const Footer = () => {
   return (
     <footer className="bg-surface-bg text-foreground py-12">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+        <div className="mb-10 grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
             <h3 className="text-lg font-bold mb-4">
               Learn<span className="text-primary">Hub</span>
@@ -10,7 +10,18 @@ const Footer = () => {
             <p className="text-sm text-muted-foreground leading-relaxed">
               Empowering young minds with skills for the future. Learn anytime, anywhere.
             </p>
+            <div className="mt-5 flex w-full max-w-sm items-center overflow-hidden rounded-full border border-primary-foreground/25 bg-primary-foreground/10">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                className="w-full bg-transparent px-4 py-2 text-sm text-primary-foreground placeholder:text-primary-foreground/60 outline-none"
+              />
+              <button className="m-1 rounded-full bg-accent px-4 py-1.5 text-xs font-semibold text-accent-foreground">
+                Subscribe
+              </button>
+            </div>
           </div>
+
           <div>
             <h4 className="text-sm font-semibold mb-3">Explore</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -20,6 +31,7 @@ const Footer = () => {
               <li><a href="#" className="hover:opacity-100 transition-opacity">Webinars</a></li>
             </ul>
           </div>
+
           <div>
             <h4 className="text-sm font-semibold mb-3">Support</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
@@ -28,6 +40,7 @@ const Footer = () => {
               <li><a href="#" className="hover:opacity-100 transition-opacity">FAQs</a></li>
             </ul>
           </div>
+
           <div>
             <h4 className="text-sm font-semibold mb-3">Legal</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
