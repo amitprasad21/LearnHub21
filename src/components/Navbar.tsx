@@ -1,12 +1,17 @@
 import { Search } from "lucide-react";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between h-16">
         <div className="flex items-center gap-8">
-          <span className="text-xl font-bold text-foreground">
+          <span
+            className="text-xl font-bold text-foreground cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             Learn<span className="text-primary">Hub</span>
           </span>
           <div className="hidden md:flex items-center gap-6">
@@ -22,10 +27,16 @@ const Navbar = () => {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <button className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+          <button
+            onClick={() => navigate("/auth")}
+            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+          >
             Login
           </button>
-          <button className="bg-accent text-accent-foreground text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-105 transition-all">
+          <button
+            onClick={() => navigate("/auth")}
+            className="bg-accent text-accent-foreground text-sm font-semibold px-5 py-2.5 rounded-full hover:brightness-105 transition-all"
+          >
             Register for free
           </button>
         </div>
