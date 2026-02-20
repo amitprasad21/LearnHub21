@@ -1,5 +1,5 @@
 import CourseCard from "./CourseCard";
-import { ALL_COURSES } from "@/pages/CourseDetail";
+import { ALL_COURSES } from "@/constants";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
 

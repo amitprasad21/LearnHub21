@@ -1,56 +1,8 @@
 import { useState } from "react";
-
-const AGE_RANGES = [
-  "1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8", "8-9", "9-10",
-  "10-11", "11-12", "12-13", "13-14", "14-15", "15-16", "16-17", "17-18", "18-19", "19-20",
-];
-
-const PILL_COLORS = [
-  "bg-accent border-accent",
-  "bg-orange/10 border-orange",
-  "bg-pink/10 border-pink",
-  "bg-green/10 border-green",
-  "bg-light-purple/20 border-primary",
-  "bg-accent border-accent",
-  "bg-orange/10 border-orange",
-  "bg-pink/10 border-pink",
-  "bg-green/10 border-green",
-  "bg-light-purple/20 border-primary",
-  "bg-accent border-accent",
-  "bg-orange/10 border-orange",
-  "bg-pink/10 border-pink",
-  "bg-green/10 border-green",
-  "bg-light-purple/20 border-primary",
-  "bg-accent border-accent",
-  "bg-orange/10 border-orange",
-  "bg-pink/10 border-pink",
-  "bg-green/10 border-green",
-];
-
-const SELECTED_COLORS = [
-  "bg-accent border-accent text-accent-foreground",
-  "bg-orange border-orange text-primary-foreground",
-  "bg-pink border-pink text-primary-foreground",
-  "bg-green border-green text-primary-foreground",
-  "bg-primary border-primary text-primary-foreground",
-  "bg-accent border-accent text-accent-foreground",
-  "bg-orange border-orange text-primary-foreground",
-  "bg-pink border-pink text-primary-foreground",
-  "bg-green border-green text-primary-foreground",
-  "bg-primary border-primary text-primary-foreground",
-  "bg-accent border-accent text-accent-foreground",
-  "bg-orange border-orange text-primary-foreground",
-  "bg-pink border-pink text-primary-foreground",
-  "bg-green border-green text-primary-foreground",
-  "bg-primary border-primary text-primary-foreground",
-  "bg-accent border-accent text-accent-foreground",
-  "bg-orange border-orange text-primary-foreground",
-  "bg-pink border-pink text-primary-foreground",
-  "bg-green border-green text-primary-foreground",
-];
+import { AGE_RANGES, PILL_COLORS, SELECTED_COLORS } from "@/constants";
 
 const AgeSelection = () => {
-  const [selected, setSelected] = useState(6); // default 7-8
+  const [selected, setSelected] = useState(6);
 
   return (
     <section className="py-12 md:py-16 bg-background">
