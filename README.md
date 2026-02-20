@@ -1,73 +1,138 @@
-# Welcome to your Lovable project
+# LearnHub
 
-## Project info
+LearnHub is a **responsive React + TypeScript frontend** for discovering kids’ learning courses such as **coding, robotics, chess, public speaking**, and more.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+It helps parents and students explore age-appropriate classes, instructors, and schedules with an intuitive UI.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Live Project
 
-**Use Lovable**
+👉 **Lovable Project**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+> Changes made via Lovable are automatically committed to this repository.
+> 
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🧠 Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Browse courses by category (Coding, Robotics, Chess, Speaking, etc.)
+- Filter classes by **age group** and **time slots**
+- Explore instructor profiles
+- Fully responsive, mobile-first UI
+- Smooth animations and transitions
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠 Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **React 18**
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn/ui**
+- **Framer Motion**
+- **React Router**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📂 Folder Structure
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```
+src/
+ ├─ components/   # Reusable UI components
+ ├─ pages/        # Route-based pages
+ ├─ services/     # API & service logic
+ ├─ constants/    # Static data & configs
+ ├─ assets/       # Images, icons, fonts
+```
+
+---
+
+## 💻 Run Locally
+
+### 1️⃣ Prerequisites
+
+Make sure you have:
+
+- **Node.js 18+**
+- **npm 9+**
+
+Check versions:
+
+```
+node-v
+npm-v
+```
+
+---
+
+### 2️⃣ Clone the Repository
+
+```
+git clone https://github.com/amitprasad21/remix-of-learnhub.git
+cd remix-of-learnhub
+```
+
+---
+
+### 3️⃣ Install Dependencies
+
+```
+npm install
+```
+
+---
+
+### 4️⃣ Start Development Server
+
+```
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open in browser:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📜 Available Scripts
 
-## What technologies are used for this project?
+```
+npm run dev# Start development server
+npm run build# Create production build
+npm run preview# Preview production build
+npm run lint# Run lint checks
+npm run test# Run tests once
+npm run test:watch# Run tests in watch mode
+```
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Local Production Build
 
-## How can I deploy this project?
+```
+npm run build
+npm run preview
+```
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 📝 Notes
 
-Yes, you can!
+- This repository focuses on **frontend/UI**
+- Backend integration can be added later
+- `.env` files should **not** be committed (use `.env.example`)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 👨‍💻 Author
+
+**Amit Prasad**
+
+Final-year B.Tech CSE (AI/ML)
+
+Frontend & Backend Developer
