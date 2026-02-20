@@ -8,10 +8,9 @@ interface CourseSectionProps {
   emoji: string;
   subtitle: string;
   courses: Course[];
-  sectionClassName?: string;
 }
 
-const CourseSection = ({ title, emoji, subtitle, courses, sectionClassName = "" }: CourseSectionProps) => {
+const CourseSection = ({ title, emoji, subtitle, courses }: CourseSectionProps) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (dir: "left" | "right") => {
