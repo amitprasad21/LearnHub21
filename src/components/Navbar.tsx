@@ -11,7 +11,7 @@ const Navbar = () => {
             className="cursor-pointer text-xs font-bold text-foreground md:text-sm"
             onClick={() => navigate("/")}
           >
-            LearnHub
+            Logo
           </span>
           <a
             href="#"

@@ -67,7 +67,7 @@ const Index = () => {
           title="New Launches"
           emoji="⭐"
           subtitle="Our most loved courses that kids absolutely adore!"
-          courses={filteredCourses.filter((course) => course.badge === "New" || course.badge === "Selling Fast")}
+          courses={filteredCourses.filter((course) => course.badge === "New" || course.badge === "Selling fast")}
         />
       </ScrollReveal>
 
