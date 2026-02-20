@@ -14,6 +14,7 @@ export interface Course {
   level: string;
   classes: number;
   ageRange: string;
+  timeSlot: "Morning" | "Afternoon" | "Evening" | "Late Evening";
   originalPrice: number;
   salePrice: number;
   badge?: string;
@@ -33,6 +34,7 @@ export const ALL_COURSES: Course[] = [
     level: "Intermediate",
     classes: 4,
     ageRange: "7-10 yrs",
+    timeSlot: "Morning",
     originalPrice: 299,
     salePrice: 45,
     badge: "Selling fast",
@@ -50,6 +52,7 @@ export const ALL_COURSES: Course[] = [
     level: "Beginner",
     classes: 6,
     ageRange: "5-8 yrs",
+    timeSlot: "Afternoon",
     originalPrice: 399,
     salePrice: 59,
     teacher: { name: "Rahul Verma", subject: "Coding & Game Dev", rating: 4.8 },
@@ -66,6 +69,7 @@ export const ALL_COURSES: Course[] = [
     level: "Beginner",
     classes: 8,
     ageRange: "6-12 yrs",
+    timeSlot: "Evening",
     originalPrice: 499,
     salePrice: 79,
     teacher: { name: "Arjun Nair", subject: "Chess Strategy", rating: 4.7 },
@@ -82,6 +86,7 @@ export const ALL_COURSES: Course[] = [
     level: "All Levels",
     classes: 5,
     ageRange: "8-14 yrs",
+    timeSlot: "Late Evening",
     originalPrice: 349,
     salePrice: 55,
     badge: "New",
@@ -99,6 +104,7 @@ export const ALL_COURSES: Course[] = [
     level: "Advanced",
     classes: 6,
     ageRange: "10-15 yrs",
+    timeSlot: "Evening",
     originalPrice: 599,
     salePrice: 99,
     teacher: { name: "Anita Sharma", subject: "Robotics & STEM", rating: 4.9 },

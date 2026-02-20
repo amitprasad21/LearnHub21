@@ -1,26 +1,27 @@
-import { useState } from "react";
-import { TIME_SLOTS } from "@/constants";
+import { TIME_SLOTS, type Course } from "@/constants";
 
-const FilterByTime = () => {
-  const [selected, setSelected] = useState(0);
+interface FilterByTimeProps {
+  selectedTimeSlot: Course["timeSlot"] | null;
+  onSelectTimeSlot: (timeSlot: Course["timeSlot"] | null) => void;
+}
 
+const FilterByTime = ({ selectedTimeSlot, onSelectTimeSlot }: FilterByTimeProps) => {
   return (
     <section className="py-12 md:py-16 bg-surface-bg">
       <div className="container mx-auto px-4 md:px-6 text-center">
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">
-          Filter with Time ⏰
-        </h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-2">Filter with Time ⏰</h2>
         <p className="text-muted-foreground text-sm md:text-base mb-8">
           Choose a time slot that works best for your schedule
         </p>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-          {TIME_SLOTS.map((slot, i) => {
+          {TIME_SLOTS.map((slot) => {
             const Icon = slot.icon;
-            const isActive = selected === i;
+            const slotLabel = slot.label as Course["timeSlot"];
+            const isActive = selectedTimeSlot === slotLabel;
             return (
               <button
                 key={slot.label}
-                onClick={() => setSelected(i)}
+                onClick={() => onSelectTimeSlot(isActive ? null : slotLabel)}
                 className={`flex flex-col items-center gap-2 p-5 rounded-2xl border-2 transition-all hover:scale-105 ${
                   isActive ? slot.activeColor : slot.color
                 }`}
